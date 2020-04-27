@@ -1,0 +1,12 @@
+{% for todo_1 in todo %}
+    <form action=""  method ="POST">
+    {% csrf_token %}
+    <label for = "title">Title</label><br />
+    <input type = 'text' name = "title" id="title" value={{todo_1.title}} />
+    <br>
+    <label for = "text">Text</label><br />
+    <textarea name ="text" id = "text">{{todo_1.text}}</textarea> 
+    <br>
+    <input type="submit" value="submit"  />
+    </form>
+{% endfor %}

@@ -22,6 +22,9 @@
     {% for todo in todos %}
         <li>{{todo.title}}</li>
            <a>{{todo.text}}</a>
+           <a class="btn btn-sm" href ="{% url 'delete' todo.id %}">delete</a>
+           <a class="btn btn-sm" href ="{% url 'update' todo.id %}">update</a>
+        <br>
     {% endfor %}
 </body>
 </html>

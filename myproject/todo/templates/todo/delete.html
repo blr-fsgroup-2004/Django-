@@ -1,0 +1,6 @@
+<p>Are you sure you want delete this "{{todo}}"</p>
+
+<form method="Post" action="">
+    {% csrf_token %}
+    <input type="submit" name="delete">
+</form>
