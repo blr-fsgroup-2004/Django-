@@ -8,22 +8,20 @@
 <body>
     <h2>Todo</h2>
     </header>
-   <form action="{% url 'index' %}"  method ="POST">
+   <form action=""  method ="POST">
     {% csrf_token %}
-    <label for = "title">Title</label><br />
-    <input type = 'text' name = "title" id="title" />
-    <br>
-    <label for = "text">Text</label><br />
-    <textarea name ="text" id = "text"></textarea> 
+    <div>{{form.title}}</div>
+    <br/>
+    <div>{{form.text}}</div>
     <br>
     <input type="submit" value="submit" />
     </form>
 
     {% for todo in todos %}
+        <br>
         <li>{{todo.title}}</li>
-           <a>{{todo.text}}</a>
-           <a class="btn btn-sm" href ="{% url 'delete' todo.id %}">delete</a>
-           <a class="btn btn-sm" href ="{% url 'update' todo.id %}">update</a>
+        <br>
+        <a>{{todo.text}}</a>
         <br>
     {% endfor %}
 </body>
